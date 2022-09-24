@@ -582,4 +582,10 @@
   <data name="tsbRestoreGuiNConfig.Text" xml:space="preserve">
     <value>恢复v2rayN配置文件</value>
   </data>
+  <data name="ToolStripMenuItem_Exit.Text" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="ToolStripMenuItem_HideWindow.Text" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
 </root>

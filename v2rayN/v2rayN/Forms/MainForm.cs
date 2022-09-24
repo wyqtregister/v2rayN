@@ -953,11 +953,15 @@ namespace v2rayN.Forms
             _ = LoadV2ray();
         }
 
-        private void tsbClose_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_HideWindow_Click(object sender, EventArgs e)
         {
             StorageUI();
             HideForm();
-            //this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ToolStripMenuItem_Exit_Click(object sender, EventArgs e)
+        {
+            Exit();
         }
 
         /// <summary>
@@ -1166,12 +1170,15 @@ namespace v2rayN.Forms
 
         private void menuExit_Click(object sender, EventArgs e)
         {
-            Visible = false;
-            Close();
-
-            Application.Exit();
+            Exit();
         }
 
+        private void Exit()
+        {
+            Visible = false;
+            Close();
+            Application.Exit();
+        }
 
         private void ShowForm()
         {
@@ -1621,6 +1628,5 @@ namespace v2rayN.Forms
             }
         }
         #endregion
-
     }
 }

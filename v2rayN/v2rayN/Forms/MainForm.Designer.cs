@@ -130,7 +130,9 @@
             this.tsbLanguageZhHans = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbPromotion = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbClose = new System.Windows.Forms.ToolStripButton();
+            this.tsbClose = new System.Windows.Forms.ToolStripDropDownButton();
+            this.ToolStripMenuItem_HideWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scServers)).BeginInit();
             this.scServers.Panel1.SuspendLayout();
             this.scServers.Panel2.SuspendLayout();
@@ -867,10 +869,24 @@
             // 
             // tsbClose
             // 
+            this.tsbClose.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_HideWindow,
+            this.ToolStripMenuItem_Exit});
             this.tsbClose.Image = global::v2rayN.Properties.Resources.minimize;
             resources.ApplyResources(this.tsbClose, "tsbClose");
             this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
+            // 
+            // ToolStripMenuItem_HideWindow
+            // 
+            this.ToolStripMenuItem_HideWindow.Name = "ToolStripMenuItem_HideWindow";
+            resources.ApplyResources(this.ToolStripMenuItem_HideWindow, "ToolStripMenuItem_HideWindow");
+            this.ToolStripMenuItem_HideWindow.Click += new System.EventHandler(this.ToolStripMenuItem_HideWindow_Click);
+            // 
+            // ToolStripMenuItem_Exit
+            // 
+            this.ToolStripMenuItem_Exit.Name = "ToolStripMenuItem_Exit";
+            resources.ApplyResources(this.ToolStripMenuItem_Exit, "ToolStripMenuItem_Exit");
+            this.ToolStripMenuItem_Exit.Click += new System.EventHandler(this.ToolStripMenuItem_Exit_Click);
             // 
             // MainForm
             // 
@@ -882,6 +898,7 @@
             this.MaximizeBox = true;
             this.MinimizeBox = true;
             this.Name = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
@@ -926,7 +943,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuExport2ServerConfig;
         private System.Windows.Forms.ToolStrip tsMain;
         private System.Windows.Forms.ToolStripDropDownButton tsbServer;
-        private System.Windows.Forms.ToolStripButton tsbClose;
+        private System.Windows.Forms.ToolStripDropDownButton tsbClose;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
@@ -1008,6 +1025,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsbSubGroupUpdate;
         private System.Windows.Forms.ToolStripMenuItem tsbSubGroupUpdateViaProxy;
         private System.Windows.Forms.ToolStripMenuItem tsbRestoreGuiNConfig;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_HideWindow;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Exit;
     }
 }
 
