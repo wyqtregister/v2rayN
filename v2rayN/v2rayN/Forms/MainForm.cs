@@ -953,6 +953,11 @@ namespace v2rayN.Forms
             _ = LoadV2ray();
         }
 
+        private void ToolStripMenuItem_Minimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
         private void ToolStripMenuItem_HideWindow_Click(object sender, EventArgs e)
         {
             StorageUI();
@@ -1628,5 +1633,6 @@ namespace v2rayN.Forms
             }
         }
         #endregion
+
     }
 }

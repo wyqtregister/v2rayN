@@ -133,6 +133,7 @@
             this.tsbClose = new System.Windows.Forms.ToolStripDropDownButton();
             this.ToolStripMenuItem_HideWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Minimize = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scServers)).BeginInit();
             this.scServers.Panel1.SuspendLayout();
             this.scServers.Panel2.SuspendLayout();
@@ -870,6 +871,7 @@
             // tsbClose
             // 
             this.tsbClose.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_Minimize,
             this.ToolStripMenuItem_HideWindow,
             this.ToolStripMenuItem_Exit});
             this.tsbClose.Image = global::v2rayN.Properties.Resources.minimize;
@@ -887,6 +889,12 @@
             this.ToolStripMenuItem_Exit.Name = "ToolStripMenuItem_Exit";
             resources.ApplyResources(this.ToolStripMenuItem_Exit, "ToolStripMenuItem_Exit");
             this.ToolStripMenuItem_Exit.Click += new System.EventHandler(this.ToolStripMenuItem_Exit_Click);
+            // 
+            // ToolStripMenuItem_Minimize
+            // 
+            this.ToolStripMenuItem_Minimize.Name = "ToolStripMenuItem_Minimize";
+            resources.ApplyResources(this.ToolStripMenuItem_Minimize, "ToolStripMenuItem_Minimize");
+            this.ToolStripMenuItem_Minimize.Click += new System.EventHandler(this.ToolStripMenuItem_Minimize_Click);
             // 
             // MainForm
             // 
@@ -1027,6 +1035,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsbRestoreGuiNConfig;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_HideWindow;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Exit;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Minimize;
     }
 }
 

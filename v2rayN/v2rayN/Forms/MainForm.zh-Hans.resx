@@ -588,4 +588,7 @@
   <data name="ToolStripMenuItem_HideWindow.Text" xml:space="preserve">
     <value>隐藏</value>
   </data>
+  <data name="ToolStripMenuItem_Minimize.Text" xml:space="preserve">
+    <value>最小化</value>
+  </data>
 </root>
