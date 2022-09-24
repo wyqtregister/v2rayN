@@ -1131,5 +1131,16 @@ namespace v2rayN.Resx {
                 return ResourceManager.GetString("UngroupedServers", resourceCulture);
             }
         }
+
+        /// <summary>
+        /// 查找类似 ValideServersGroup 的本地化字符串。
+        /// </summary>
+        internal static string ValideServersGroup
+        {
+            get
+            {
+                return ResourceManager.GetString("ValideServersGroup", resourceCulture);
+            }
+        }
     }
 }

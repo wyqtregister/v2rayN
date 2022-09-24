@@ -456,12 +456,17 @@ namespace v2rayN.Forms
         private void InitGroupView()
         {
             tabGroup.TabPages.Clear();
-
+            //所有服务器
             string title = $"  {ResUI.AllGroupServers}   ";
             var tabPage = new TabPage(title);
             tabPage.Name = "";
             tabGroup.TabPages.Add(tabPage);
-
+            //有效服务器
+            title = $"  {ResUI.ValideServersGroup}   ";
+            tabPage = new TabPage(title);
+            tabPage.Name = ResUI.ValideServersGroup;
+            tabGroup.TabPages.Add(tabPage);
+            //自定义分组
             foreach (var item in config.groupItem.OrderBy(t => t.sort))
             {
                 var tabPage2 = new TabPage($"   {item.remarks}   ");
@@ -475,11 +480,20 @@ namespace v2rayN.Forms
             menuMoveToGroup.DropDownItems.Clear();
 
             List<ToolStripMenuItem> lst = new List<ToolStripMenuItem>();
+
+            //有效服务器分组
+            ToolStripMenuItem ts = new ToolStripMenuItem(ResUI.ValideServersGroup)
+            {
+                Tag = ResUI.ValideServersGroup,
+            };
+            ts.Click += ts_Group_Click;
+            lst.Add(ts);
+
+            //自定义分组
             foreach (var item in config.groupItem)
             {
                 string name = item.remarks;
-
-                ToolStripMenuItem ts = new ToolStripMenuItem(name)
+                ts = new ToolStripMenuItem(name)
                 {
                     Tag = item.id,
                 };
@@ -509,12 +523,21 @@ namespace v2rayN.Forms
             try
             {
                 ToolStripItem ts = (ToolStripItem)sender;
+
                 var groupIdSelected = Utils.ToString(ts.Tag);
 
                 int index = GetLvSelectedIndex();
                 if (index < 0)
                 {
                     return;
+                }
+
+                if (groupIdSelected == ResUI.ValideServersGroup)
+                {//解决订阅更新清除添加到“有效服务器”的服务器节点
+                    foreach (var vi in lstSelecteds)
+                    {
+                        vi.subid = string.Empty;
+                    }
                 }
 
                 if (ConfigHandler.MoveServerToGroup(config, lstSelecteds, groupIdSelected) == 0)
