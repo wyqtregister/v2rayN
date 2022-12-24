@@ -48,6 +48,7 @@
             this.menuCopyServer = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSetDefaultServer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuUpdateServerAvailableStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMoveToGroup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMoveEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMoveTop = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,9 +69,9 @@
             this.menuExport2ServerConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExport2ShareUrl = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExport2SubContent = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbServer = new System.Windows.Forms.ToolStripDropDownButton();
             this.tabGroup = new System.Windows.Forms.TabControl();
             this.qrCodeControl = new v2rayN.Forms.QRCodeControl();
+            this.tsbServer = new System.Windows.Forms.ToolStripDropDownButton();
             this.scBig = new System.Windows.Forms.SplitContainer();
             this.gbServers = new System.Windows.Forms.GroupBox();
             this.mainMsgControl = new v2rayN.Forms.MainMsgControl();
@@ -131,9 +132,9 @@
             this.tsbPromotion = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbClose = new System.Windows.Forms.ToolStripDropDownButton();
+            this.ToolStripMenuItem_Minimize = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_HideWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_Minimize = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scServers)).BeginInit();
             this.scServers.Panel1.SuspendLayout();
             this.scServers.Panel2.SuspendLayout();
@@ -203,6 +204,7 @@
             this.menuCopyServer,
             this.menuSetDefaultServer,
             this.toolStripSeparator3,
+            this.menuUpdateServerAvailableStatus,
             this.menuMoveToGroup,
             this.menuMoveEvent,
             this.menuSelectAll,
@@ -220,7 +222,6 @@
             this.menuExport2ShareUrl,
             this.menuExport2SubContent});
             this.cmsLv.Name = "cmsLv";
-            this.cmsLv.OwnerItem = this.tsbServer;
             resources.ApplyResources(this.cmsLv, "cmsLv");
             // 
             // menuAddVmessServer
@@ -310,6 +311,12 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // menuUpdateServerAvailableStatus
+            // 
+            this.menuUpdateServerAvailableStatus.Name = "menuUpdateServerAvailableStatus";
+            resources.ApplyResources(this.menuUpdateServerAvailableStatus, "menuUpdateServerAvailableStatus");
+            this.menuUpdateServerAvailableStatus.Click += new System.EventHandler(this.menuSetServerAvailable_Click);
             // 
             // menuMoveToGroup
             // 
@@ -433,13 +440,6 @@
             resources.ApplyResources(this.menuExport2SubContent, "menuExport2SubContent");
             this.menuExport2SubContent.Click += new System.EventHandler(this.menuExport2SubContent_Click);
             // 
-            // tsbServer
-            // 
-            this.tsbServer.DropDown = this.cmsLv;
-            this.tsbServer.Image = global::v2rayN.Properties.Resources.server;
-            resources.ApplyResources(this.tsbServer, "tsbServer");
-            this.tsbServer.Name = "tsbServer";
-            // 
             // tabGroup
             // 
             resources.ApplyResources(this.tabGroup, "tabGroup");
@@ -451,6 +451,13 @@
             // 
             resources.ApplyResources(this.qrCodeControl, "qrCodeControl");
             this.qrCodeControl.Name = "qrCodeControl";
+            // 
+            // tsbServer
+            // 
+            this.tsbServer.DropDown = this.cmsLv;
+            this.tsbServer.Image = global::v2rayN.Properties.Resources.server;
+            resources.ApplyResources(this.tsbServer, "tsbServer");
+            this.tsbServer.Name = "tsbServer";
             // 
             // scBig
             // 
@@ -878,6 +885,12 @@
             resources.ApplyResources(this.tsbClose, "tsbClose");
             this.tsbClose.Name = "tsbClose";
             // 
+            // ToolStripMenuItem_Minimize
+            // 
+            this.ToolStripMenuItem_Minimize.Name = "ToolStripMenuItem_Minimize";
+            resources.ApplyResources(this.ToolStripMenuItem_Minimize, "ToolStripMenuItem_Minimize");
+            this.ToolStripMenuItem_Minimize.Click += new System.EventHandler(this.ToolStripMenuItem_Minimize_Click);
+            // 
             // ToolStripMenuItem_HideWindow
             // 
             this.ToolStripMenuItem_HideWindow.Name = "ToolStripMenuItem_HideWindow";
@@ -889,12 +902,6 @@
             this.ToolStripMenuItem_Exit.Name = "ToolStripMenuItem_Exit";
             resources.ApplyResources(this.ToolStripMenuItem_Exit, "ToolStripMenuItem_Exit");
             this.ToolStripMenuItem_Exit.Click += new System.EventHandler(this.ToolStripMenuItem_Exit_Click);
-            // 
-            // ToolStripMenuItem_Minimize
-            // 
-            this.ToolStripMenuItem_Minimize.Name = "ToolStripMenuItem_Minimize";
-            resources.ApplyResources(this.ToolStripMenuItem_Minimize, "ToolStripMenuItem_Minimize");
-            this.ToolStripMenuItem_Minimize.Click += new System.EventHandler(this.ToolStripMenuItem_Minimize_Click);
             // 
             // MainForm
             // 
@@ -1036,6 +1043,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_HideWindow;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Exit;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Minimize;
+        private System.Windows.Forms.ToolStripMenuItem menuUpdateServerAvailableStatus;
     }
 }
 

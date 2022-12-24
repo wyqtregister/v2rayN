@@ -266,6 +266,7 @@ namespace v2rayN.Forms
             lvServers.Columns.Add(ResUI.LvTLS, 100);
             lvServers.Columns.Add(ResUI.LvSubscription, 100);
             lvServers.Columns.Add(ResUI.LvTestResults, 120, HorizontalAlignment.Right);
+            lvServers.Columns.Add(ResUI.RealTestedResult, 100);
 
             if (statistics != null && statistics.Enable)
             {
@@ -318,6 +319,7 @@ namespace v2rayN.Forms
                 Utils.AddSubItem(lvItem, EServerColName.streamSecurity.ToString(), item.streamSecurity);
                 Utils.AddSubItem(lvItem, EServerColName.subRemarks.ToString(), item.GetSubRemarks(config));
                 Utils.AddSubItem(lvItem, EServerColName.testResult.ToString(), item.testResult);
+                Utils.AddSubItem(lvItem, EServerColName.available.ToString(), item.available.ToString());
 
                 if (statistics != null && statistics.Enable)
                 {
@@ -537,6 +539,7 @@ namespace v2rayN.Forms
                     foreach (var vi in lstSelecteds)
                     {
                         vi.subid = string.Empty;
+                        vi.available = true;
                     }
                 }
 
@@ -639,7 +642,6 @@ namespace v2rayN.Forms
                 _ = LoadV2ray();
             }
         }
-
 
         private void lvServers_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1355,6 +1357,20 @@ namespace v2rayN.Forms
         private void menuMoveToGroup_Click(object sender, EventArgs e)
         {
         }
+
+        private void menuSetServerAvailable_Click(object sender, EventArgs e)
+        {
+            int index = GetLvSelectedIndex();
+            if (index < 0)
+            {
+                return;
+            }
+            if(ConfigHandler.UpdateServerAvailableStatus(ref config, index) == 0)
+            {
+                RefreshServers();
+            }
+        }
+
         #endregion
 
         #region 系统代理相关
@@ -1633,6 +1649,5 @@ namespace v2rayN.Forms
             }
         }
         #endregion
-
     }
 }

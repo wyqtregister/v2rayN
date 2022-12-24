@@ -1142,5 +1142,16 @@ namespace v2rayN.Resx {
                 return ResourceManager.GetString("ValideServersGroup", resourceCulture);
             }
         }
+
+        /// <summary>
+        /// 实际使用结果
+        /// </summary>
+        internal static string RealTestedResult
+        {
+            get
+            {
+                return ResourceManager.GetString("RealTestedResult", resourceCulture);
+            }
+        }
     }
 }

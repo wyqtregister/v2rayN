@@ -478,4 +478,7 @@
   <data name="ValideServersGroup" xml:space="preserve">
     <value>Valide Servers Group</value>
   </data>
+  <data name="RealTestedResult" xml:space="preserve">
+    <value>Available</value>
+  </data>
 </root>

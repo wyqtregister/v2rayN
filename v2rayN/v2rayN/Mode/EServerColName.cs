@@ -13,6 +13,7 @@ namespace v2rayN.Mode
         streamSecurity,
         subRemarks,
         testResult,
+        available,
 
         todayDown,
         todayUp,

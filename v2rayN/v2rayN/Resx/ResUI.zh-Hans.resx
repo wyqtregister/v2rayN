@@ -478,4 +478,7 @@
   <data name="ValideServersGroup" xml:space="preserve">
     <value>有效服务器</value>
   </data>
+  <data name="RealTestedResult" xml:space="preserve">
+    <value>使用结果</value>
+  </data>
 </root>

@@ -175,6 +175,10 @@ namespace v2rayN.Handler
                 for (int i = 0; i < config.vmess.Count; i++)
                 {
                     VmessItem vmessItem = config.vmess[i];
+                    if (Utils.IsNullOrEmpty(vmessItem.subid))
+                    {
+                        vmessItem.available = true;
+                    }
                     UpgradeServerVersion(ref vmessItem);
 
                     if (Utils.IsNullOrEmpty(vmessItem.indexId))
@@ -381,7 +385,19 @@ namespace v2rayN.Handler
 
             return config.vmess[index];
         }
-
+        public static int UpdateServerAvailableStatus(ref Config config, int index)
+        {
+            try
+            {
+                config.vmess[index].available = !config.vmess[index].available;
+                ToJsonFile(config);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
         /// <summary>
         /// 移动服务器
         /// </summary>
